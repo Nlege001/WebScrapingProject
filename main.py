@@ -23,8 +23,17 @@ div = soup.findAll("div", {'class':'platts-custom-form-style'})
 #print(div)
 
 elem= driver.find_element_by_xpath("//div[@id='findpeople']")
-faculty = elem.find_element_by_tag_name('ul')
+#faculty = []
+faculty = elem.find_elements_by_tag_name('ul')
 
-print(faculty.text)
 
-#for i in range(len())
+print(faculty)
+
+faculty_list = []
+
+for f in faculty:
+    faculty_list.append(f.text.split('\n'))
+
+print(faculty_list)
+
+
